@@ -14,22 +14,16 @@ Student.prototype.setSubject = function (subjectName) {
 
 Student.prototype.addMarks = function (...marksToAdd) {
         
-    if (this.hasOwnProperty('marks') == true)
-    {
-       
-        return this.marks.push(...marksToAdd);
+    if (this.hasOwnProperty('marks')){
+
+        this.marks.push(...marksToAdd);
     }
-    
-    
     
 }
 
 Student.prototype.getAverage = function () {
     
-    if (this.hasOwnProperty('marks') == false){
-        return 0;
-    }
-    if (this.marks.length == 0 ){
+    if (!this.hasOwnProperty('marks') || this.marks.length == 0 ){
         return 0;
     }
     else {
